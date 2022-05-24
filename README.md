@@ -7,3 +7,7 @@ $ npx create-react-app insert-project-directory-here --template typescript --use
 $  cd insert-project-directory-here
 $  npm start
 ```
+### Instalando Sass
+```
+$ npm install --save-dev sass
+```
