@@ -11,3 +11,7 @@ $  npm start
 ```
 $ npm install --save-dev sass
 ```
+### Instalando css-modules
+```
+$ npm install -D typescript-plugin-css-modules
+```
