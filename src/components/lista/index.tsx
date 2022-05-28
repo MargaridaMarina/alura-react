@@ -1,4 +1,5 @@
 import React from 'react';
+import Item from './item';
 import style from './Lista.module.scss';
 
 function Lista(){
@@ -19,10 +20,12 @@ function Lista(){
       </h2>
       <ul>
         {tarefas.map((item, index) => (
-          <li key={index} className={style.item}>
-            <h3>{item.tarefa}</h3>
-            <span>{item.tempo}</span>
-          </li>
+          <Item
+            key={index}  /* chave para linkar o item no Virtual DOM no DOM real */
+            /* o React cria um DOM virtual em memória e só atualiza o DOM real quando algo dentro desse Virtual DOM realmente é atualizado */
+            tarefa={item.tarefa}
+            tempo={item.tempo}  
+          />
         ))}
     </ul>
     </aside>
