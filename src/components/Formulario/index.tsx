@@ -1,14 +1,18 @@
 import React from 'react';
+import { ITarefa } from '../../types/tarefas';
 import Botao from '../Botao'
 import style from './Formulario.module.scss'
 
-class Formulario extends React.Component {
+class Formulario extends React.Component <{
+  setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>
+}> {
   state = {
     tarefa: "",
     tempo: "00:00"
   }
   adicionarTarefa(evento: React.FormEvent<HTMLFormElement>){/*evento de formulario vindo de uma tag formulario do html*/
     evento.preventDefault();
+    this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state}])
   }
   render(){
     return(/*bind associa funcao a outro escopo*/
@@ -43,7 +47,7 @@ class Formulario extends React.Component {
               required
             />
           </div>
-        <Botao>
+        <Botao type="submit">
           Adicionar
         </Botao>
       </form>
