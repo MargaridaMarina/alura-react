@@ -1,23 +1,26 @@
+import React from 'react';
 import Item from './item';
 import style from './Lista.module.scss';
 import {ITarefa} from '../../types/tarefas'
 
-function Lista({tarefas}:{tarefas: ITarefa[]}){
+interface Props {
+  tarefas: ITarefa[],
+  selecionaTarefa: (tarefaSelecionada: ITarefa) => void 
+}
+
+function Lista({ tarefas, selecionaTarefa }: Props) {
   return (
     <aside className={style.listaTarefas}>
-      <h2>
-        Estudos do dia
-      </h2>
+      <h2> Estudos do dia </h2>
       <ul>
-        {tarefas.map((item, index) => (
+        {tarefas.map(item => (
           <Item
-            key={index}  /* chave para linkar o item no Virtual DOM no DOM real */
-            /* o React cria um DOM virtual em memória e só atualiza o DOM real quando algo dentro desse Virtual DOM realmente é atualizado */
-            tarefa={item.tarefa}
-            tempo={item.tempo}  
+            selecionaTarefa={selecionaTarefa}
+            key={item.id}
+            {...item}
           />
         ))}
-    </ul>
+      </ul>
     </aside>
   )
 }
