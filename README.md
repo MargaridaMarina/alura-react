@@ -20,3 +20,8 @@ $ npm install -D typescript-plugin-css-modules
 $ npm i uuid
 $ npm i --save-dev @types/uuid
 ```
+### Projeto
+<h1 align="center">
+  <a href="https://alura-react-10xphr2y7-margaridamarina.vercel.app//">
+  <img src="./src/assets/img/projeto.png" alt="imagem da tela principal"/> 
+</h1>
